@@ -23,9 +23,9 @@ const App = () => {
 
       <HeaderContainer />
 
-      {/* <CardContainer />
+      <CardContainer />
 
-      <Footer /> */}
+      {/* <Footer /> */}
     </div>
   );
 };
