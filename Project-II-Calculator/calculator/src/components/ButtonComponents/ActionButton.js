@@ -3,9 +3,7 @@ import './Button.css';
 
 const ActionButton = ({ value }) => {
   return (
-    <div className="action-button">
-      <button>{value}</button>
-    </div>
+    <button className="action-button">{value}</button>
   );
 }
 

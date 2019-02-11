@@ -1,17 +1,6 @@
 .buttons-container {
   display:flex;
-
-}
-
-.numbers-buttons {
-  width: 75%;
-}
-
-
-.calculation-buttons {
-  display: flex;
-  flex-direction: column;
-  width: 25%;
+  flex-flow: row wrap;
 }
 
 .calculation-btn {
@@ -19,14 +8,21 @@
   background-color: crimson;
   border: 1px solid black;
   padding: 1rem;
-  
+  width: 25%;
 
 }
 
 .number-btn {
-  width: 33%;
+  width: 25%;
+  font-weight: 700;
 }
 
 .action-button {
-  width: 100%;
+  width: 75%;
+}
+
+button {
+  background: white;
+  border: 1px solid grey;
+  color: black;
 }
