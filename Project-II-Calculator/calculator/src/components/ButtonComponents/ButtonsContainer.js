@@ -1,12 +1,12 @@
 import React from 'react';
 import './Button.css';
-import ActionButton from './ActionButton';
+import CalculationButton from './CalculationButton';
 import NumberButton from './NumberButton';
 
 const ButtonsContainer = () => {
   return (
     <div className="buttons-container">
-      <ActionButton />
+      <CalculationButton />
 
       <NumberButton />
     </div>

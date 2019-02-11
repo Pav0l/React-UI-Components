@@ -1,0 +1,13 @@
+.calculation-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculation-btn {
+  color: white;
+  background-color: crimson;
+  border: 1px solid black;
+  padding: 1rem;
+  /* width: 16px;
+  height: 16px; */
+}
