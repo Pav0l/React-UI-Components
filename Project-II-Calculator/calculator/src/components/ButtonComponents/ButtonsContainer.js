@@ -3,13 +3,13 @@ import './Button.css';
 import NumberButton from './NumberButton';
 import ActionButton from './ActionButton';
 
-const ButtonsContainer = () => {
+const ButtonsContainer = (click) => {
   return (
     <div className="buttons-container">
 
       <ActionButton value="clear" />
       <NumberButton buttonStyle="calculation-btn" text="÷" />
-      <NumberButton buttonStyle="number-btn" text="7" />
+      <NumberButton buttonStyle="number-btn" text="7" onClick={() => click.clickNumber("7")} />
       <NumberButton buttonStyle="number-btn" text="8" />
       <NumberButton buttonStyle="number-btn" text="9" />
       <NumberButton buttonStyle="calculation-btn" text="x" />
