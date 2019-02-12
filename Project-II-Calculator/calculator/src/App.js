@@ -32,7 +32,6 @@ export default class App extends React.Component {
     this.setState({
       total: (this.state.total + button.target.dataset.value)
     })
-
   }
 
   clearFunction() {

@@ -30,7 +30,7 @@ const ButtonsContainer = ({ clickFunction, clearFunction, operatorFunction, getR
           buttonStyle={button.buttonStyle} 
           value={button.value} 
           clicker={button.clicker} 
-          key={idx}
+          keys={idx}
           />)
       }
     </div>
