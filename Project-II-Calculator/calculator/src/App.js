@@ -24,34 +24,50 @@ export default class App extends React.Component {
     this.state = {
       total: "",
       operator: "",
-      memory: [],
+      memory: "",
     };
   }
 
   clickNumber(button) {
-    // this.setState(state => ({
-    //   total: state.total+=button.target.dataset.value
-    // }))
-    console.log(button.target.dataset.value)
+    this.setState({
+      total: (this.state.total+button.target.dataset.value)
+    })
   }
 
-  // clickOperator(button) {
-  //   this.setState({
-  //     operator: button,
-  //     memory: "",
-  //   });
-  // }
+  clearFunction() {
+    this.setState({
+      total: "",
+      operator: "",
+      memory: ""
+    })
+  }
 
+  clickOperator(button) {
+    this.setState({
+      operator: button.target.dataset.value,
+      memory: this.state.total,
+      total: ""
+    });
+  }
 
-
-
+  calculateResult() {
+    this.setState({
+      total: eval(this.state.memory.concat(this.state.operator, this.state.total))
+      // total: Number(this.state.memory) + this.state.operator + Number(this.state.total)
+    });
+  }
 
   render() {
     return (
       <div className='calculator-container'>
         <CalculatorDisplay total={this.state.total} />
         
-        <ButtonsContainer clickFunction={this.clickNumber.bind(this)}/> 
+        <ButtonsContainer
+         clickFunction={this.clickNumber.bind(this)} 
+         clearFunction={this.clearFunction.bind(this)} 
+         operatorFunction={this.clickOperator.bind(this)} 
+         getResultFunction={this.calculateResult.bind(this)}
+         /> 
       </div>
     );
   }
