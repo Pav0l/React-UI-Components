@@ -1,29 +1,34 @@
 import React from 'react';
 import './Button.css';
 import NumberButton from './NumberButton';
-import ActionButton from './ActionButton';
+// import ActionButton from './ActionButton';
 
 const ButtonsContainer = ({ clickFunction, clearFunction, operatorFunction, getResultFunction }) => {
+
+  const btnProps = [
+    {buttonStyle: 'action-button', value: 'clear', clicker: clearFunction},
+    {buttonStyle: 'calculation-btn', value: '/', clicker: operatorFunction},
+    {buttonStyle: 'number-btn', value: '7', clicker: clickFunction},
+    {buttonStyle: 'number-btn', value: '8', clicker: clickFunction},
+    {buttonStyle: 'number-btn', value: '9', clicker: clickFunction},
+    {buttonStyle: 'calculation-btn', value: '*', clicker: operatorFunction},
+    {buttonStyle: 'number-btn', value: '4', clicker: clickFunction},
+    {buttonStyle: 'number-btn', value: '5', clicker: clickFunction},
+    {buttonStyle: 'number-btn', value: '6', clicker: clickFunction},
+    {buttonStyle: 'calculation-btn', value: '-', clicker: operatorFunction},
+    {buttonStyle: 'number-btn', value: '1', clicker: clickFunction},
+    {buttonStyle: 'number-btn', value: '2', clicker: clickFunction},
+    {buttonStyle: 'number-btn', value: '3', clicker: clickFunction},
+    {buttonStyle: 'calculation-btn', value: '+', clicker: operatorFunction},
+    {buttonStyle: 'action-button', value: '0', clicker: clickFunction},
+    {buttonStyle: 'calculation-btn', value: '=', clicker: getResultFunction},
+  ];
+
   return (
     <div className="buttons-container">
-
-      <ActionButton value="clear" clicker={clearFunction} />
-      <NumberButton buttonStyle="calculation-btn" text="/" clicker={operatorFunction} />
-      <NumberButton buttonStyle="number-btn" text="7" clicker={clickFunction} />
-      <NumberButton buttonStyle="number-btn" text="8" clicker={clickFunction} />
-      <NumberButton buttonStyle="number-btn" text="9" clicker={clickFunction} />
-      <NumberButton buttonStyle="calculation-btn" text="*" clicker={operatorFunction} />
-      <NumberButton buttonStyle="number-btn" text="4" clicker={clickFunction} />
-      <NumberButton buttonStyle="number-btn" text="5" clicker={clickFunction} />
-      <NumberButton buttonStyle="number-btn" text="6" clicker={clickFunction} />
-      <NumberButton buttonStyle="calculation-btn" text="-" clicker={operatorFunction} />
-      <NumberButton buttonStyle="number-btn" text="1" clicker={clickFunction} />
-      <NumberButton buttonStyle="number-btn" text="2" clicker={clickFunction} />
-      <NumberButton buttonStyle="number-btn" text="3" clicker={clickFunction} />
-      <NumberButton buttonStyle="calculation-btn" text="+" clicker={operatorFunction} />
-      <ActionButton value="0" clicker={clickFunction} />
-      <NumberButton buttonStyle="calculation-btn" text="=" clicker={getResultFunction} />
-
+      {
+        btnProps.map(button => <NumberButton buttonStyle={button.buttonStyle} value={button.value} clicker={button.clicker} />)
+      }
     </div>
   );
 }
