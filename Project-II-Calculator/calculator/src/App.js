@@ -30,8 +30,9 @@ export default class App extends React.Component {
 
   clickNumber(button) {
     this.setState({
-      total: (this.state.total+button.target.dataset.value)
+      total: (this.state.total + button.target.dataset.value)
     })
+
   }
 
   clearFunction() {
@@ -51,10 +52,30 @@ export default class App extends React.Component {
   }
 
   calculateResult() {
-    this.setState({
-      total: eval(this.state.memory.concat(this.state.operator, this.state.total))
-      // total: Number(this.state.memory) + this.state.operator + Number(this.state.total)
-    });
+    switch (this.state.operator) {
+      case '+':
+        this.setState({
+          total: (Number(this.state.memory) + Number(this.state.total))
+        });
+        break;
+      case '-':
+        this.setState({
+          total: (Number(this.state.memory) - Number(this.state.total))
+        });
+        break;
+      case 'x':
+        this.setState({
+          total: (Number(this.state.memory) * Number(this.state.total))
+        });
+        break;
+      case '÷':
+        this.setState({
+          total: (Number(this.state.memory) / Number(this.state.total))
+        });
+        break;
+      default:
+        break;
+    }
   }
 
   render() {
@@ -71,5 +92,4 @@ export default class App extends React.Component {
       </div>
     );
   }
-
 }
