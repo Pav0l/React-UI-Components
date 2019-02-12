@@ -24,22 +24,23 @@ export default class App extends React.Component {
     this.state = {
       total: "",
       operator: "",
-      memory: "0",
+      memory: [],
     };
   }
 
   clickNumber(button) {
-    this.setState(oldState => ({
-      memory: oldState.concat(button),
-    }));
+    // this.setState(state => ({
+    //   total: state.total+=button.target.dataset.value
+    // }))
+    console.log(button.target.dataset.value)
   }
 
-  clickOperator(button) {
-    this.setState({
-      operator: button,
-      memory: "",
-    });
-  }
+  // clickOperator(button) {
+  //   this.setState({
+  //     operator: button,
+  //     memory: "",
+  //   });
+  // }
 
 
 
@@ -48,9 +49,9 @@ export default class App extends React.Component {
   render() {
     return (
       <div className='calculator-container'>
-        <CalculatorDisplay total={this.state.memory} />
+        <CalculatorDisplay total={this.state.total} />
         
-        <ButtonsContainer click={this.clickNumber.bind(this)} />
+        <ButtonsContainer clickFunction={this.clickNumber.bind(this)}/> 
       </div>
     );
   }
