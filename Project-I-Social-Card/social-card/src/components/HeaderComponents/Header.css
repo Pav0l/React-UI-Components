@@ -1,1 +1,25 @@
 /* All styles for your header Components live here */
+.header-container {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-content {
+  padding: 1rem 0;
+}
+
+.image-thumbnail {
+  /* max-width: 100%; */
+}
+
+.title-primary {
+  font-weight: 700;
+}
+
+.title-secondary {
+  color: grey;
+  font-size: 0.9rem;
+}
+
